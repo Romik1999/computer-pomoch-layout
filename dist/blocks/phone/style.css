@@ -6,4 +6,23 @@
   display: block;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1441px) {
+  .phone {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .phone {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .phone {
+    font-size: 18px;
+  }
 }

@@ -1,6 +1,6 @@
 <section class="hero">
     <div class="cont">
-        <div class="hero__wrapper">
+        <div class="hero__top">
             <div class="hero__info">
                 <div class="hero__title">
                     <span>Компьютерный </span>
@@ -47,13 +47,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__form">
-                    @@include('form/form.html', {customClass: 'form--grey'})
-                </div>
             </div>
             <div class="hero__image">
                 <img src="./img/hero-img.png" alt="hero">
             </div>
+        </div>
+
+        <div class="hero__form">
+            @@include('form/form.html', {customClass: 'form--grey'})
         </div>
     </div>
 </section>

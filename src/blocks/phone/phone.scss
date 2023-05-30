@@ -6,4 +6,15 @@
   display: block;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
+
+  @media screen and (max-width: 1441px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 1270px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 769px) {
+    font-size: 18px;
+  }
 }
