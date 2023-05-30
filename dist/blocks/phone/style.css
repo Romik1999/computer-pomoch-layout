@@ -1,0 +1,9 @@
+.phone {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  color: #DB0707;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}

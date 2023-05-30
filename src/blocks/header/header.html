@@ -1,0 +1,38 @@
+<header class="header">
+    <div class="cont">
+        <div class="header__wrapper">
+            <div class="header__hamburger">
+                @@include('hamburger/hamburger.html')
+            </div>
+            <div class="header__advantages">
+                <div class="header-advantages">
+                    <div class="header-advantages__items">
+                        <div class="header-advantages__item">
+                            <div class="header-advantages__icon">
+                                <img src="./img/phone.svg">
+                            </div>
+                            <div class="header-advantages__text">
+                                Без выходных и праздников
+                            </div>
+                        </div>
+                        <div class="header-advantages__item">
+                            <div class="header-advantages__icon">
+                                <img src="./img/place.svg">
+                            </div>
+                            <div class="header-advantages__text">
+                                Выезд в любую точку города
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__links">
+                <a class="header__link header__link--active" href="./">Ремонт компьютеров/ноутбуков</a>
+                <a class="header__link" href="./price.html">Услуги и цены</a>
+            </div>
+            <div class="header__phone">
+                @@include('phone/phone.html')
+            </div>
+        </div>
+    </div>
+</header>
