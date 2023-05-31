@@ -1,16 +1,28 @@
 @import "../../scss/colors.scss";
 
 .problems {
-  &__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(412px, 1fr));
-    grid-template-rows: auto;
-    grid-column-gap: 25px;
-    grid-row-gap: 30px;
-  }
+  &-slider {
+    &__item {
+      height: unset !important;
+      display: flex;
+      padding: 2px;
+      box-sizing: border-box;
+    }
 
-  &__item {
-    display: flex;
+    &__bottom {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      column-gap: 20px;
+
+      @media screen and (max-width: 901px) {
+        display: flex;
+      }
+    }
+
+    &__pagination{
+      width: fit-content!important;
+    }
   }
 
   @media screen and (max-width: 769px) {
