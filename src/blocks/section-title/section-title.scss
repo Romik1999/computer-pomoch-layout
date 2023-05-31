@@ -17,13 +17,18 @@
   @media screen and (max-width: 1441px) {
     font-size: 40px;
   }
-
   @media screen and (max-width: 992px) {
     font-size: 35px;
     margin-bottom: 40px;
   }
-
   @media screen and (max-width: 769px) {
     text-align: center;
+  }
+
+  &--white{
+    color: $white;
+  }
+  &--black{
+    color: $black;
   }
 }

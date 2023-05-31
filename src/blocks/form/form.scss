@@ -29,6 +29,15 @@
         color: $white;
       }
     }
+
+    & .form__submit {
+      background-color: $black;
+      color: $white;
+
+      &:hover {
+
+      }
+    }
   }
 
   &__wrapper {

@@ -382,6 +382,14 @@ main {
   margin-bottom: 80px;
 }
 
+.section-title--white {
+  color: #ffffff;
+}
+
+.section-title--black {
+  color: #1B1B1B;
+}
+
 .swiper-arrow {
   min-width: 40px;
   width: 50px;
@@ -616,6 +624,11 @@ main {
 }
 
 .form--white .form__input::placeholder {
+  color: #ffffff;
+}
+
+.form--white .form__submit {
+  background-color: #1B1B1B;
   color: #ffffff;
 }
 
@@ -1001,6 +1014,45 @@ main {
   height: 60px;
 }
 
+.offer__wrapper {
+  max-width: 1330px;
+  width: 100%;
+  background-color: #DB0707;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.offer__title {
+  margin-bottom: 25px;
+}
+
+.offer__subtitle {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 120%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 35px;
+}
+
+.offer__form {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 1600px) {
   .problems-item__body {
     padding-top: 15px;
@@ -1130,6 +1182,10 @@ main {
     font-size: 18px;
     height: 55px;
   }
+
+  .offer__subtitle {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 1270px) {
@@ -1223,6 +1279,10 @@ main {
   .problems-item__button {
     font-size: 16px;
     height: 50px;
+  }
+
+  .offer__subtitle {
+    font-size: 20px;
   }
 }
 
@@ -1393,6 +1453,23 @@ main {
   .problems-item__button {
     height: 40px;
     font-size: 14px;
+  }
+
+  .offer__wrapper {
+    padding: 30px;
+  }
+
+  .offer__title {
+    margin-bottom: 15px;
+  }
+
+  .offer__subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .offer__form {
+    max-width: 740px;
   }
 }
 
@@ -1593,6 +1670,19 @@ main {
   .problems-item__title {
     font-size: 20px;
     margin-bottom: 10px;
+  }
+
+  .offer {
+    padding: 40px 0;
+  }
+
+  .offer__wrapper {
+    padding: 25px 15px;
+    border-radius: 10px;
+  }
+
+  .offer__subtitle {
+    font-size: 22px;
   }
 }
 

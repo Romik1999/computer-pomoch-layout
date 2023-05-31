@@ -51,6 +51,11 @@
   color: #ffffff;
 }
 
+.form--white .form__submit {
+  background-color: #1B1B1B;
+  color: #ffffff;
+}
+
 .form__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

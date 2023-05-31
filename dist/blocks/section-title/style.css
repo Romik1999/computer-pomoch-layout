@@ -19,6 +19,14 @@
   margin-bottom: 80px;
 }
 
+.section-title--white {
+  color: #ffffff;
+}
+
+.section-title--black {
+  color: #1B1B1B;
+}
+
 @media screen and (max-width: 1441px) {
   .section-title {
     font-size: 40px;
