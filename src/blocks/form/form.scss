@@ -38,6 +38,10 @@
     @media screen and (max-width: 992px) {
       column-gap: 10px;
     }
+    @media screen and (max-width: 769px) {
+      flex-direction: column;
+      row-gap: 10px;
+    }
   }
 
   &__field {
@@ -60,15 +64,13 @@
     @media screen and (max-width: 1441px) {
       height: 55px;
     }
-
     @media screen and (max-width: 992px) {
       height: 50px;
       padding: 15px 12px;
       border-radius: 10px;
       font-size: 14px;
     }
-
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 769px) {
       padding: 15px 20px;
       border-radius: 10px;
       font-size: 16px;
@@ -77,6 +79,13 @@
     &::placeholder {
       font-size: 18px;
       line-height: 120%;
+
+      @media screen and (max-width: 992px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 769px) {
+        font-size: 16px;
+      }
     }
 
     &:focus {
