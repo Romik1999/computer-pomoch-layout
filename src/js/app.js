@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 spaceBetween: 15,
                 slidesPerView: 3,
                 grid: {
-                    rows: 2,
+                    rows: 3,
                     fill: "row"
                 },
             },

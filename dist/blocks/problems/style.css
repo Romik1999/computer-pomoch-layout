@@ -1,3 +1,7 @@
+.problems {
+  padding-top: 160px;
+}
+
 .problems-slider__item {
   height: unset !important;
   display: -webkit-box;
@@ -25,6 +29,12 @@
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
+}
+
+@media screen and (max-width: 992px) {
+  .problems {
+    padding-top: 80px;
+  }
 }
 
 @media screen and (max-width: 901px) {

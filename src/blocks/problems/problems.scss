@@ -1,6 +1,12 @@
 @import "../../scss/colors.scss";
 
 .problems {
+  padding-top: 160px;
+
+  @media screen and (max-width: 992px) {
+    padding-top: 80px;
+  }
+
   &-slider {
     &__item {
       height: unset !important;

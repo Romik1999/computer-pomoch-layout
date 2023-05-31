@@ -777,6 +777,10 @@ main {
   height: auto;
 }
 
+.problems {
+  padding-top: 160px;
+}
+
 .problems-slider__item {
   height: unset !important;
   display: -webkit-box;
@@ -1367,6 +1371,10 @@ main {
 
   .stages__arrow {
     max-width: 65px;
+  }
+
+  .problems {
+    padding-top: 80px;
   }
 
   .problems-item__img {
