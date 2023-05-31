@@ -1,0 +1,19 @@
+@import "../../scss/colors.scss";
+
+.problems {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(412px, 1fr));
+    grid-template-rows: auto;
+    grid-column-gap: 25px;
+    grid-row-gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  @media screen and (max-width: 769px) {
+
+  }
+}
