@@ -1,0 +1,75 @@
+@import "../../scss/colors.scss";
+
+.offer {
+
+  @media screen and (max-width: 769px) {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    max-width: 1330px;
+    width: 100%;
+    background-color: $red;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 992px) {
+      padding: 30px;
+    }
+    @media screen and (max-width: 769px) {
+      padding: 25px 15px;
+      border-radius: 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 992px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white;
+    margin-bottom: 35px;
+
+
+    @media screen and (max-width: 1441px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 1270px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 992px) {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 769px) {
+      font-size: 22px;
+    }
+  }
+
+  &__form {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 992px) {
+      max-width: 740px;
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+
+  }
+}
