@@ -1,31 +1,19 @@
 @import "../../scss/colors.scss";
 
-.offer {
+.price {
 
   @media screen and (max-width: 769px) {
     padding: 40px 0;
   }
 
   &__wrapper {
-    max-width: 1330px;
+    max-width: 1677px;
     width: 100%;
-    background-color: $red;
-    border-radius: 15px;
     margin: 0 auto;
-    padding: 40px;
-    box-sizing: border-box;
-
-    @media screen and (max-width: 992px) {
-      padding: 30px;
-    }
-    @media screen and (max-width: 769px) {
-      padding: 25px 15px;
-      border-radius: 10px;
-    }
   }
 
   &__title {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     @media screen and (max-width: 992px) {
       margin-bottom: 15px;
@@ -34,42 +22,73 @@
 
   &__subtitle {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 120%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: $white;
-    margin-bottom: 35px;
-
-
-    @media screen and (max-width: 1441px) {
-      font-size: 24px;
-    }
-    @media screen and (max-width: 1270px) {
-      font-size: 20px;
-    }
-    @media screen and (max-width: 992px) {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    @media screen and (max-width: 769px) {
-      font-size: 22px;
-    }
-  }
-
-  &__form {
-    max-width: 850px;
-    width: 100%;
+    padding: 8px 36px;
+    border: 1px solid $red;
+    border-radius: 15px;
+    width: fit-content;
     margin: 0 auto;
-
-    @media screen and (max-width: 992px) {
-      max-width: 740px;
-    }
+    margin-bottom: 40px;
+    text-transform: uppercase;
   }
 
-  @media screen and (max-width: 769px) {
+  &__table {
+    margin-bottom: 40px;
+  }
 
+  &-table {
+    &__items {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background: #FFFFFF;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      padding: 28px 38px;
+      box-sizing: border-box;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 15px;
+      width: calc(100% / 7);
+      padding: 27px;
+      box-sizing: border-box;
+
+      &:nth-child(even) {
+        & .price-table__button {
+          background-color: $green;
+        }
+      }
+
+      &:nth-child(odd) {
+        & .price-table__button {
+          background-color: $red;
+        }
+      }
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 105%;
+      text-align: center;
+    }
+
+    &__button {
+      padding: 11px 21px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      color: $white;
+    }
   }
 }

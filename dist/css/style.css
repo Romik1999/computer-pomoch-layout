@@ -1053,6 +1053,109 @@ main {
   margin: 0 auto;
 }
 
+.price__wrapper {
+  max-width: 1677px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.price__title {
+  margin-bottom: 30px;
+}
+
+.price__subtitle {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 120%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 8px 36px;
+  border: 1px solid #DB0707;
+  border-radius: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.price__table {
+  margin-bottom: 40px;
+}
+
+.price-table__items {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 28px 38px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.price-table__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 15px;
+  width: 14.2857142857%;
+  padding: 27px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.price-table__item:nth-child(even) .price-table__button {
+  background-color: #8BD25C;
+}
+
+.price-table__item:nth-child(odd) .price-table__button {
+  background-color: #DB0707;
+}
+
+.price-table__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 105%;
+  text-align: center;
+}
+
+.price-table__button {
+  padding: 11px 21px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
 @media screen and (max-width: 1600px) {
   .problems-item__body {
     padding-top: 15px;
@@ -1471,6 +1574,10 @@ main {
   .offer__form {
     max-width: 740px;
   }
+
+  .price__title {
+    margin-bottom: 15px;
+  }
 }
 
 @media screen and (max-width: 901px) {
@@ -1683,6 +1790,10 @@ main {
 
   .offer__subtitle {
     font-size: 22px;
+  }
+
+  .price {
+    padding: 40px 0;
   }
 }
 
