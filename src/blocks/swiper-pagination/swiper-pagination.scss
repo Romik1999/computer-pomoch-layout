@@ -6,6 +6,8 @@
   justify-content: center;
   column-gap: 10px;
   position: unset;
+  width: fit-content!important;
+  margin: 0;
 
   &-bullet{
     width: 12px;

@@ -1,76 +1,36 @@
 <section class="brands">
     <div class="cont">
-        @@include('section-title/section-title.html', {sectionTitleClass: 'brands__title', sectionTitleColorClass: 'section-title--black', sectionTitleText: 'Стоимость услуг'})
-        <div class="brands__subtitle">
-            Выезд и диагностика бесплатно
-        </div>
-        <div class="brands__table">
-            <div class="swiper brands-table">
-                <div class="swiper-wrapper brands-table__items">
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Установка Windows</div>
-                        <div class="brands-table__button">от 450 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Установка программ</div>
-                        <div class="brands-table__button">от 50 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Установка MS Office</div>
-                        <div class="brands-table__button">от 375 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Установка антивируса</div>
-                        <div class="brands-table__button">от 375 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Чистка системы от мусора</div>
-                        <div class="brands-table__button">от 450 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Лечение от вирусов</div>
-                        <div class="brands-table__button">от 275 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Перепрошивка BIOS</div>
-                        <div class="brands-table__button">от 450 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Чистка ПК от пыли</div>
-                        <div class="brands-table__button">от 790 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Замена термопасты</div>
-                        <div class="brands-table__button">от 350 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Замена комплектующих</div>
-                        <div class="brands-table__button">от 350 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Восстановление данных</div>
-                        <div class="brands-table__button">от 500 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Ремонт блока питания</div>
-                        <div class="brands-table__button">от 450 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Ремонт материнской платы</div>
-                        <div class="brands-table__button">от 450 руб.</div>
-                    </div>
-                    <div class="swiper-slide brands-table__item">
-                        <div class="brands-table__title">Ремонт жесткого диска</div>
-                        <div class="brands-table__button">от 500 руб.</div>
-                    </div>
+        @@include('section-title/section-title.html', {sectionTitleClass: 'brands__title', sectionTitleColorClass: 'section-title--black', sectionTitleText: 'Работаем с брендами'})
+        <div class="brands__slider">
+            <div class="swiper brands-slider">
+                <div class="swiper-wrapper brands-slider__items">
+                    <div class="swiper-slide brands-slider__item">Apple</div>
+                    <div class="swiper-slide brands-slider__item">Acer</div>
+                    <div class="swiper-slide brands-slider__item">Asus</div>
+                    <div class="swiper-slide brands-slider__item">Chuwi</div>
+                    <div class="swiper-slide brands-slider__item">LG</div>
+                    <div class="swiper-slide brands-slider__item">Xiaomi</div>
+                    <div class="swiper-slide brands-slider__item">Honor</div>
+                    <div class="swiper-slide brands-slider__item">Microsoft</div>
+                    <div class="swiper-slide brands-slider__item">HP</div>
+                    <div class="swiper-slide brands-slider__item">Huawei</div>
+                    <div class="swiper-slide brands-slider__item">Dell</div>
+                    <div class="swiper-slide brands-slider__item">Digma</div>
+                    <div class="swiper-slide brands-slider__item">Google</div>
+                    <div class="swiper-slide brands-slider__item">Haier</div>
+                    <div class="swiper-slide brands-slider__item">Samsung</div>
+                    <div class="swiper-slide brands-slider__item">Gigabyte</div>
+                    <div class="swiper-slide brands-slider__item">Irbis</div>
+                    <div class="swiper-slide brands-slider__item">Msi</div>
+                    <div class="swiper-slide brands-slider__item">Razer</div>
+                    <div class="swiper-slide brands-slider__item">Lenovo</div>
                 </div>
-                <div class="brands-table__bottom">
-                    @@include('swiper-arrow/swiper-arrow--prev.html', {customClass: 'brands-table__arrow brands-table__arrow--prev'})
-                    @@include('swiper-pagination/swiper-pagination.html', {customClass: 'brands-table__pagination'})
-                    @@include('swiper-arrow/swiper-arrow--next.html', {customClass: 'brands-table__arrow brands-table__arrow--next'})
+                <div class="brands-slider__bottom">
+                    @@include('swiper-arrow/swiper-arrow--prev.html', {customClass: 'brands-slider__arrow brands-slider__arrow--prev'})
+                    @@include('swiper-pagination/swiper-pagination.html', {customClass: 'brands-slider__pagination'})
+                    @@include('swiper-arrow/swiper-arrow--next.html', {customClass: 'brands-slider__arrow brands-slider__arrow--next'})
                 </div>
             </div>
         </div>
-        <a class="brands__button" href="/brands.html">Все услуги и цены</a>
     </div>
 </section>

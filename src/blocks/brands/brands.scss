@@ -1,6 +1,57 @@
 @import "../../scss/colors.scss";
 
 .brands {
-  @media screen and (max-width: 992px) {
+  &-slider{
+    &__item {
+      background-color: $white;
+      box-shadow: 1.45946px 1.45946px 2.91892px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+      height: 145px;
+
+      &:nth-child(odd){
+        border: 1px solid $green;
+      }
+      &:nth-child(even){
+        border: 1px solid $red;
+      }
+
+      @media screen and (max-width: 1441px) {
+        font-size: 24px;
+        height: 116px;
+      }
+      @media screen and (max-width: 1270px) {
+        font-size: 20px;
+        height: 100px;
+      }
+      @media screen and (max-width: 992px) {
+        height: 90px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      @media screen and (max-width: 769px) {
+        height: 80px;
+      }
+    }
+    &__bottom{
+      display: none;
+      align-items: center;
+      justify-content: center;
+      column-gap: 30px;
+
+      @media screen and (max-width: 769px) {
+        display: flex;
+      }
+      @media screen and (max-width: 575px) {
+        column-gap: 15px;
+      }
+    }
   }
 }

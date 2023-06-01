@@ -60,9 +60,9 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
   margin-top: 20px;
 }
 
@@ -75,5 +75,13 @@ main {
 @media screen and (max-width: 576px) {
   section {
     padding: 40px 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .swiper-bottom {
+    -webkit-column-gap: 15px;
+       -moz-column-gap: 15px;
+            column-gap: 15px;
   }
 }

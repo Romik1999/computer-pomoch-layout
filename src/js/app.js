@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
     const priceSlider = new Swiper('.price-table', {
         loop: false,
         pagination: {
@@ -110,6 +109,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 slidesPerView: 7,
                 grid: {
                     rows: 2,
+                    fill: "row"
+                },
+            },
+        }
+    });
+
+    const brandsSlider = new Swiper('.brands-slider', {
+        loop: false,
+        pagination: {
+            el: '.brands-slider__pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.brands-slider__arrow--next',
+            prevEl: '.brands-slider__arrow--prev',
+        },
+        breakpoints: {
+            300: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                grid: {
+                    rows: 4,
+                    fill: "row"
+                },
+            },
+            450: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                grid: {
+                    rows: 4,
+                    fill: "row"
+                },
+            },
+            769: {
+                slidesPerView: 5,
+                spaceBetween: 15,
+                grid: {
+                    rows: 4,
                     fill: "row"
                 },
             },

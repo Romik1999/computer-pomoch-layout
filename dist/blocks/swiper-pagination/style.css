@@ -12,6 +12,10 @@
      -moz-column-gap: 10px;
           column-gap: 10px;
   position: unset;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  margin: 0;
 }
 
 .swiper-pagination-bullet {
