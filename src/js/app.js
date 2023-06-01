@@ -58,4 +58,61 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         }
     });
+
+
+    const priceSlider = new Swiper('.price-table', {
+        loop: false,
+        pagination: {
+            el: '.price-table__pagination',
+        },
+        navigation: {
+            nextEl: '.price-table__arrow--next',
+            prevEl: '.price-table__arrow--prev',
+            clickable: true,
+        },
+        breakpoints: {
+            300: {
+                slidesPerView: 1,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+            350: {
+                slidesPerView: 2,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+            576: {
+                slidesPerView: 3,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+            670: {
+                slidesPerView: 4,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+            769: {
+                slidesPerView: 5,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+            860: {
+                slidesPerView: 7,
+                grid: {
+                    rows: 2,
+                    fill: "row"
+                },
+            },
+        }
+    });
 });
