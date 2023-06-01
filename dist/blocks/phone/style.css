@@ -7,6 +7,13 @@
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.phone:hover {
+  color: #8BD25C;
 }
 
 @media screen and (max-width: 1441px) {
