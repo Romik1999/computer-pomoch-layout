@@ -1,6 +1,22 @@
 @import "../../scss/colors.scss";
 
 .advantages {
-  @media screen and (max-width: 992px) {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    max-width: 1190px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1441px) {
+      row-gap: 30px;
+    }
+    @media screen and (max-width: 992px) {
+      row-gap: 25px;
+    }
+    @media screen and (max-width: 769px) {
+      row-gap: 15px;
+    }
   }
 }
