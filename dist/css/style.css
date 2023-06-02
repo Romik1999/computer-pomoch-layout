@@ -700,6 +700,10 @@ main {
   color: #ffffff;
 }
 
+.form--grey .form__submit:hover {
+  background-color: #8BD25C;
+}
+
 .form--white .form__input {
   border: 1px solid #ffffff;
 }
@@ -726,7 +730,13 @@ main {
 
 .form--white .form__submit {
   background-color: #1B1B1B;
+  border: 1px solid #1B1B1B;
   color: #ffffff;
+}
+
+.form--white .form__submit:hover {
+  background-color: #ffffff;
+  color: #1B1B1B;
 }
 
 .form__wrapper {

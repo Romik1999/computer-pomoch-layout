@@ -16,7 +16,7 @@
       color: $white;
 
       &:hover {
-
+        background-color: $green;
       }
     }
   }
@@ -32,10 +32,12 @@
 
     & .form__submit {
       background-color: $black;
+      border: 1px solid $black;
       color: $white;
 
       &:hover {
-
+        background-color: $white;
+        color: $black;
       }
     }
   }
