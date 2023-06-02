@@ -152,4 +152,17 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         }
     });
+
+    let priceButton = document.querySelector('.price__button');
+    if (priceButton) {
+        let priceRows = document.querySelectorAll('.price__row--hidden');
+        if (priceRows) {
+            priceButton.addEventListener('click', () => {
+                priceRows.forEach(priceRow => {
+                    priceRow.classList.remove(('price__row--hidden'));
+                })
+                priceButton.classList.add('active')
+            });
+        }
+    }
 });

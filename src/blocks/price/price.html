@@ -2,7 +2,8 @@
     <div class="cont">
         @@include('section-title/section-title.html', {sectionTitleClass: 'price__title', sectionTitleColorClass: 'section-title--black', sectionTitleText: 'Стоимость услуг'})
         <div class="price__subtitle">
-            Выезд и диагностика бесплатно
+            <span>Выезд и диагностика</span>
+            <span>бесплатно</span>
         </div>
         <div class="price__table">
             <div class="swiper price-table">
@@ -64,7 +65,7 @@
                         <div class="price-table__button">от 500 руб.</div>
                     </div>
                 </div>
-                <div class="price-table__bottom">
+                <div class="swiper-bottom price-table__bottom">
                     @@include('swiper-arrow/swiper-arrow--prev.html', {customClass: 'price-table__arrow price-table__arrow--prev'})
                     @@include('swiper-pagination/swiper-pagination.html', {customClass: 'price-table__pagination'})
                     @@include('swiper-arrow/swiper-arrow--next.html', {customClass: 'price-table__arrow price-table__arrow--next'})

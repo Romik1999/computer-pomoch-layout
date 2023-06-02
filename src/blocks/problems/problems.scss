@@ -21,7 +21,7 @@
       justify-content: center;
       column-gap: 20px;
 
-      @media screen and (max-width: 901px) {
+      @media screen and (max-width: 769px) {
         display: flex;
       }
     }
@@ -29,9 +29,5 @@
     &__pagination{
       width: fit-content!important;
     }
-  }
-
-  @media screen and (max-width: 769px) {
-
   }
 }
