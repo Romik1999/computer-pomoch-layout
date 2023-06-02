@@ -141,6 +141,12 @@
     font-size: 20px;
     line-height: 120%;
     color: $red;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover{
+      text-decoration: underline;
+    }
 
     @media screen and (max-width: 1441px) {
       font-size: 18px;

@@ -24,11 +24,17 @@
   @media screen and (max-width: 769px) {
     text-align: center;
   }
+  @media screen and (max-width: 340px) {
+    font-size: 30px;
+  }
 
   &--white{
     color: $white;
   }
   &--black{
     color: $black;
+  }
+  &--red{
+    color: $red;
   }
 }

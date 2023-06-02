@@ -118,12 +118,76 @@
             <input class="form__input" placeholder="Ваше имя">
         </label>
         <label class="form__field">
-            <input class="form__input" placeholder="+7 (___) ___ - __ - __">
+            <input class="form__input" placeholder="+7 (___) ___ - __ - __"
+                   onkeypress="maskPhone(event)"
+                   onpaste="onPastePhone(event)">
         </label>
         <button class="form__submit" type="submit">Получить скидку</button>
     </div>
 </form>
 
+<script>
+    function maskPhone(e) {
+        const mask = /\+7 \(\d{3}\) \d{3} \d{2} \d{2}/;
+        var valSize = e.target.value.trim().replace(/\D/g, "").length;
+        e = e || window.event;
+        var key = e.keyCode || e.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\+/;
+        if (!regex.test(key)) {
+            e.returnValue = false;
+            if (e.preventDefault) e.preventDefault();
+        } else {
+            if (valSize !== 0 && key === "+") {
+                e.returnValue = false;
+                return;
+            }
+            if (valSize === 0) {
+                if (key === "8" || key === "7") {
+                    e.target.value = "+7";
+                    e.returnValue = false;
+                } else if (key === "9") {
+                    e.target.value = "+7 (9";
+                    e.returnValue = false;
+                } else if (key !== "+") {
+                    e.target.value = "+7 (9";
+                } else if (key === "+" && e.target.value === "+") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 1) {
+                e.target.value = "+7 (9";
+                if (key === "9") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 4) {
+                if (e.target.value.slice(-1) === ")") {
+                    e.target.value = e.target.value.trim() + " ";
+                } else if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + ") ";
+            } else if (valSize === 7 || valSize === 9) {
+                if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + " ";
+            } else if (valSize === 11) {
+                e.returnValue = false;
+            }
+        }
+    }
+
+    function onPastePhone(e) {
+        e.preventDefault();
+        const mask = /(7|8)(9\d{2})(\d{3})(\d{2})(\d{2})/;
+        var phone = e.clipboardData.getData('text/plain').replace(/\D/g, "");
+        if (!mask.test(phone)) {
+            e.returnValue = false;
+            return;
+        }
+        var matched = phone.match(mask);
+        e.target.value = "+7 (" + matched[2] + ") " + matched[3] + " " + matched[4] + " " + matched[5];
+        e.returnValue = false;
+    }
+</script>
         </div>
     </div>
 </section>
@@ -176,7 +240,7 @@
             <div class="swiper problems-slider">
                 <div class="swiper-wrapper problems-slider__items">
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-1.png" alt="Не включается компьютер?">
     </div>
@@ -195,7 +259,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-2.png" alt="Не работает экран?">
     </div>
@@ -214,7 +278,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-3.png" alt="Не работает Windows?">
     </div>
@@ -233,7 +297,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-4.png" alt="Нет звука?">
     </div>
@@ -252,7 +316,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-5.png" alt="Пролили жидкость?">
     </div>
@@ -271,7 +335,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-6.png" alt="Сильно греется?">
     </div>
@@ -290,7 +354,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-7.png" alt="Ремонт компьюетров, ноутбуков и мононоблоков">
     </div>
@@ -309,7 +373,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-8.png" alt="Помощь в сборке компьютеров">
     </div>
@@ -328,7 +392,7 @@
 
                     </div>
                     <div class="swiper-slide problems-slider__item">
-                        <div class="problems-item">
+                        <div class="problems-item" data-modal>
     <div class="problems-item__img">
         <img src="./img/problems/problems-9.png" alt="Ремонт “железа” и работа с BIOS">
     </div>
@@ -380,12 +444,76 @@
             <input class="form__input" placeholder="Ваше имя">
         </label>
         <label class="form__field">
-            <input class="form__input" placeholder="+7 (___) ___ - __ - __">
+            <input class="form__input" placeholder="+7 (___) ___ - __ - __"
+                   onkeypress="maskPhone(event)"
+                   onpaste="onPastePhone(event)">
         </label>
         <button class="form__submit" type="submit">Получить скидку</button>
     </div>
 </form>
 
+<script>
+    function maskPhone(e) {
+        const mask = /\+7 \(\d{3}\) \d{3} \d{2} \d{2}/;
+        var valSize = e.target.value.trim().replace(/\D/g, "").length;
+        e = e || window.event;
+        var key = e.keyCode || e.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\+/;
+        if (!regex.test(key)) {
+            e.returnValue = false;
+            if (e.preventDefault) e.preventDefault();
+        } else {
+            if (valSize !== 0 && key === "+") {
+                e.returnValue = false;
+                return;
+            }
+            if (valSize === 0) {
+                if (key === "8" || key === "7") {
+                    e.target.value = "+7";
+                    e.returnValue = false;
+                } else if (key === "9") {
+                    e.target.value = "+7 (9";
+                    e.returnValue = false;
+                } else if (key !== "+") {
+                    e.target.value = "+7 (9";
+                } else if (key === "+" && e.target.value === "+") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 1) {
+                e.target.value = "+7 (9";
+                if (key === "9") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 4) {
+                if (e.target.value.slice(-1) === ")") {
+                    e.target.value = e.target.value.trim() + " ";
+                } else if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + ") ";
+            } else if (valSize === 7 || valSize === 9) {
+                if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + " ";
+            } else if (valSize === 11) {
+                e.returnValue = false;
+            }
+        }
+    }
+
+    function onPastePhone(e) {
+        e.preventDefault();
+        const mask = /(7|8)(9\d{2})(\d{3})(\d{2})(\d{2})/;
+        var phone = e.clipboardData.getData('text/plain').replace(/\D/g, "");
+        if (!mask.test(phone)) {
+            e.returnValue = false;
+            return;
+        }
+        var matched = phone.match(mask);
+        e.target.value = "+7 (" + matched[2] + ") " + matched[3] + " " + matched[4] + " " + matched[5];
+        e.returnValue = false;
+    }
+</script>
             </div>
         </div>
     </div>
@@ -402,59 +530,59 @@
         <div class="price__table">
             <div class="swiper price-table">
                 <div class="swiper-wrapper price-table__items">
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Установка Windows</div>
                         <div class="price-table__button">от 450 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Установка программ</div>
                         <div class="price-table__button">от 50 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Установка MS Office</div>
                         <div class="price-table__button">от 375 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Установка антивируса</div>
                         <div class="price-table__button">от 375 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Чистка системы от мусора</div>
                         <div class="price-table__button">от 450 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Лечение от вирусов</div>
                         <div class="price-table__button">от 275 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Перепрошивка BIOS</div>
                         <div class="price-table__button">от 450 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Чистка ПК от пыли</div>
                         <div class="price-table__button">от 790 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Замена термопасты</div>
                         <div class="price-table__button">от 350 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Замена комплектующих</div>
                         <div class="price-table__button">от 350 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Восстановление данных</div>
                         <div class="price-table__button">от 500 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Ремонт блока питания</div>
                         <div class="price-table__button">от 450 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Ремонт материнской платы</div>
                         <div class="price-table__button">от 450 руб.</div>
                     </div>
-                    <div class="swiper-slide price-table__item">
+                    <div class="swiper-slide price-table__item" data-modal>
                         <div class="price-table__title">Ремонт жесткого диска</div>
                         <div class="price-table__button">от 500 руб.</div>
                     </div>
@@ -484,7 +612,7 @@
     <div class="cont">
         <div class="advantages__items">
             <div class="advantages__item">
-                <div class="advantages-item">
+                <div class="advantages-item" data-modal>
     <div class="advantages-item__img">
         <img src="./img/advantages-item-1.png">
     </div>
@@ -497,7 +625,7 @@
 
             </div>
             <div class="advantages__item">
-                <div class="advantages-item">
+                <div class="advantages-item" data-modal>
     <div class="advantages-item__img">
         <img src="./img/advantages-item-2.png">
     </div>
@@ -510,7 +638,7 @@
 
             </div>
             <div class="advantages__item">
-                <div class="advantages-item">
+                <div class="advantages-item" data-modal>
     <div class="advantages-item__img">
         <img src="./img/advantages-item-3.png">
     </div>
@@ -587,12 +715,76 @@
             <input class="form__input" placeholder="Ваше имя">
         </label>
         <label class="form__field">
-            <input class="form__input" placeholder="+7 (___) ___ - __ - __">
+            <input class="form__input" placeholder="+7 (___) ___ - __ - __"
+                   onkeypress="maskPhone(event)"
+                   onpaste="onPastePhone(event)">
         </label>
         <button class="form__submit" type="submit">Получить скидку</button>
     </div>
 </form>
 
+<script>
+    function maskPhone(e) {
+        const mask = /\+7 \(\d{3}\) \d{3} \d{2} \d{2}/;
+        var valSize = e.target.value.trim().replace(/\D/g, "").length;
+        e = e || window.event;
+        var key = e.keyCode || e.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\+/;
+        if (!regex.test(key)) {
+            e.returnValue = false;
+            if (e.preventDefault) e.preventDefault();
+        } else {
+            if (valSize !== 0 && key === "+") {
+                e.returnValue = false;
+                return;
+            }
+            if (valSize === 0) {
+                if (key === "8" || key === "7") {
+                    e.target.value = "+7";
+                    e.returnValue = false;
+                } else if (key === "9") {
+                    e.target.value = "+7 (9";
+                    e.returnValue = false;
+                } else if (key !== "+") {
+                    e.target.value = "+7 (9";
+                } else if (key === "+" && e.target.value === "+") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 1) {
+                e.target.value = "+7 (9";
+                if (key === "9") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 4) {
+                if (e.target.value.slice(-1) === ")") {
+                    e.target.value = e.target.value.trim() + " ";
+                } else if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + ") ";
+            } else if (valSize === 7 || valSize === 9) {
+                if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + " ";
+            } else if (valSize === 11) {
+                e.returnValue = false;
+            }
+        }
+    }
+
+    function onPastePhone(e) {
+        e.preventDefault();
+        const mask = /(7|8)(9\d{2})(\d{3})(\d{2})(\d{2})/;
+        var phone = e.clipboardData.getData('text/plain').replace(/\D/g, "");
+        if (!mask.test(phone)) {
+            e.returnValue = false;
+            return;
+        }
+        var matched = phone.match(mask);
+        e.target.value = "+7 (" + matched[2] + ") " + matched[3] + " " + matched[4] + " " + matched[5];
+        e.returnValue = false;
+    }
+</script>
             </div>
         </div>
     </div>
@@ -633,6 +825,94 @@
     </div>
 </footer>
 
+<div class="modal">
+    <div class="modal__container">
+        <div class="modal__wrapper">
+            <img class="modal__close" src="./img/close.svg">
+            <h2 class="section-title modal__title section-title--black">Оcтавьте заявку прямо сейчас!</h2>
+
+            <div class="modal__subtitle">Менеджер свяжется с Вами в ближайшее время</div>
+            <div class="modal__form">
+                <form class="form form--grey">
+    <div class="form__wrapper">
+        <label class="form__field">
+            <input class="form__input" placeholder="Ваше имя">
+        </label>
+        <label class="form__field">
+            <input class="form__input" placeholder="+7 (___) ___ - __ - __"
+                   onkeypress="maskPhone(event)"
+                   onpaste="onPastePhone(event)">
+        </label>
+        <button class="form__submit" type="submit">Получить скидку</button>
+    </div>
+</form>
+
+<script>
+    function maskPhone(e) {
+        const mask = /\+7 \(\d{3}\) \d{3} \d{2} \d{2}/;
+        var valSize = e.target.value.trim().replace(/\D/g, "").length;
+        e = e || window.event;
+        var key = e.keyCode || e.which;
+        key = String.fromCharCode(key);
+        var regex = /[0-9]|\+/;
+        if (!regex.test(key)) {
+            e.returnValue = false;
+            if (e.preventDefault) e.preventDefault();
+        } else {
+            if (valSize !== 0 && key === "+") {
+                e.returnValue = false;
+                return;
+            }
+            if (valSize === 0) {
+                if (key === "8" || key === "7") {
+                    e.target.value = "+7";
+                    e.returnValue = false;
+                } else if (key === "9") {
+                    e.target.value = "+7 (9";
+                    e.returnValue = false;
+                } else if (key !== "+") {
+                    e.target.value = "+7 (9";
+                } else if (key === "+" && e.target.value === "+") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 1) {
+                e.target.value = "+7 (9";
+                if (key === "9") {
+                    e.returnValue = false;
+                }
+            } else if (valSize === 4) {
+                if (e.target.value.slice(-1) === ")") {
+                    e.target.value = e.target.value.trim() + " ";
+                } else if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + ") ";
+            } else if (valSize === 7 || valSize === 9) {
+                if (e.target.value.slice(-1) === " ") {
+                    return;
+                } else e.target.value = e.target.value.trim() + " ";
+            } else if (valSize === 11) {
+                e.returnValue = false;
+            }
+        }
+    }
+
+    function onPastePhone(e) {
+        e.preventDefault();
+        const mask = /(7|8)(9\d{2})(\d{3})(\d{2})(\d{2})/;
+        var phone = e.clipboardData.getData('text/plain').replace(/\D/g, "");
+        if (!mask.test(phone)) {
+            e.returnValue = false;
+            return;
+        }
+        var matched = phone.match(mask);
+        e.target.value = "+7 (" + matched[2] + ") " + matched[3] + " " + matched[4] + " " + matched[5];
+        e.returnValue = false;
+    }
+</script>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="libs/swiper/swiper-bundle.min.js"></script>
 <script src="js/app.min.js"></script>

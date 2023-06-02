@@ -71,6 +71,14 @@
   font-size: 20px;
   line-height: 120%;
   color: #DB0707;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.advantages-item__link:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1441px) {
