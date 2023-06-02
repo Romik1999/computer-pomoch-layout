@@ -3389,6 +3389,12 @@ main {
   }
 }
 
+@media screen and (max-width: 432px) {
+  .price__subtitle {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .price__item {
     padding: 20px 10px;
@@ -3400,6 +3406,13 @@ main {
 }
 
 @media screen and (max-width: 365px) {
+  .price__subtitle {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .advantages-item {
     min-height: 100px;
   }

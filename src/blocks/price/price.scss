@@ -83,6 +83,12 @@
     @media screen and (max-width: 769px) {
       font-size: 22px;
     }
+    @media screen and (max-width: 432px) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 365px) {
+      flex-direction: column;
+    }
   }
 
   &__table {
