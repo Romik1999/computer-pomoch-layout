@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (max-width: 901px) {
+@media screen and (max-width: 769px) {
   .problems-slider__bottom {
     display: -webkit-box;
     display: -ms-flexbox;
